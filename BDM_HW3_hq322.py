@@ -10,6 +10,9 @@ from pyspark.sql import types as T
 sc = pyspark.SparkContext.getOrCreate()
 spark = SparkSession(sc)
 
+import sys
+from io import StringIO
+
 def returnName(id):
   for i in range(len(sample_items)):
     if id == sample_items['code'][i]:
