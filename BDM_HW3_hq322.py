@@ -42,3 +42,5 @@ if __name__ == "__main__":
     sample_items[['key', 'code']] = sample_items['UPC code'].str.split('-', expand=True)
     
     outputTask1 = products.mapPartitionsWithIndex(extractProducts)
+    outputTask1.cache()
+    outputtask1.write.csv(sys.argv[1])
